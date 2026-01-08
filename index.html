@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Awesome Name Generator</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+    </head>
+
+    <body>
+        <header>
+            <!-- place navbar here -->
+        </header>
+        <main></main>
+        <footer>
+            <!-- place footer here -->
+        </footer>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Space Name Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>🚀 Space Identity Generator</h1>
+
+        <!-- Current Day -->
+        <div class="section">
+            <h2>Current Day</h2>
+            <label><input type="radio" name="Cday" value="monday"> Monday</label>
+            <label><input type="radio" name="Cday" value="tuesday"> Tuesday</label>
+            <label><input type="radio" name="Cday" value="wednesday"> Wednesday</label>
+            <label><input type="radio" name="Cday" value="thursday"> Thursday</label>
+            <label><input type="radio" name="Cday" value="friday"> Friday</label>
+        </div>
+
+              <div class="section">
+            <h2>Your First Initial</h2>
+            <input 
+                type="text" 
+                id="Finitial" 
+                maxlength="1" 
+                placeholder="Enter one letter (A–Z)"
+            >
+        </div>
+
+<!-- Favorite Color -->
+<div class="section">
+    <h2>Favorite Color</h2>
+    <div class="color-options">
+        <button class="color-btn" data-color="red" style="background-color: red;"></button>
+        <button class="color-btn" data-color="orange" style="background-color: orange;"></button>
+        <button class="color-btn" data-color="yellow" style="background-color: yellow;"></button>
+        <button class="color-btn" data-color="green" style="background-color: green;"></button>
+        <button class="color-btn" data-color="blue" style="background-color: blue;"></button>
+        <button class="color-btn" data-color="indigo" style="background-color: indigo;"></button>
+        <button class="color-btn" data-color="violet" style="background-color: violet;"></button>
+        <button class="color-btn" data-color="black" style="background-color: black;"></button>
+        <button class="color-btn" data-color="white" style="background-color: white; border: 1px solid #ccc;"></button>
+        <button class="color-btn" data-color="gray" style="background-color: gray;"></button>
+        <button class="color-btn" data-color="brown" style="background-color: brown;"></button>
+        <button class="color-btn" data-color="pink" style="background-color: pink;"></button>
+    </div>
+</div>
+
+
+       <!-- Favorite Planet -->
+<div class="section">
+    <h2>Favorite Planet</h2>
+    <select id="Fplanet">
+        <option value="" disabled selected>Select your planet</option>
+        <option value="mercury">Mercury</option>
+        <option value="venus">Venus</option>
+        <option value="earth">Earth</option>
+        <option value="mars">Mars</option>
+        <option value="jupiter">Jupiter</option>
+        <option value="saturn">Saturn</option>
+        <option value="uranus">Uranus</option>
+        <option value="neptune">Neptune</option>
+    </select>
+</div>
+
+
+        <!-- Age Slider -->
+        <div class="section">
+            <h2>Current Age</h2>
+            <input type="range" id="Cage" min="16" max="20">
+            <div class="age-labels">
+                <span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+            </div>
+        </div>
+
+        <!-- Output -->
+        <div class="output">
+            <h2>Your Space Name</h2>
+            <p id="result">_____ _____ _____ _____ _____</p>
+        </div>
+
+        <button>Generate Name</button>
+    </div>
+
+</body>
+</html>
+
+
+
+    </body>
+</html>
