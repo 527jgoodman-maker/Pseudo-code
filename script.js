@@ -5,14 +5,14 @@ document.getElementById("Cage").value;
 
 function getPrefix(cDay) {
     if (
-        cDay === "Monday" ||
-        cDay === "Tuesday" ||
-        cDay === "Wednesday"
+        cDay === "monday" ||
+        cDay === "tuesday" ||
+        cDay === "wednesday"
     ) {
         return "astro";
     } else if (
-        cDay === "Thursday" ||
-        cDay === "Friday"
+        cDay === "thursday" ||
+        cDay === "friday"
     ) {
         return "hyper";
     } else {
@@ -21,11 +21,12 @@ function getPrefix(cDay) {
 }
 
 function getFirstName(fInital) {
-    if (fInital >= "A" && fInital <= "J") {
-        return "Alex";
-    } else if (fInital >= "K" && fInital <= "P") {
+    const initial = fInital.toUpperCase();
+    if (initial >= "A" && initial <= "J") {
         return "Julia";
-    } else if (fInital >= "Q" && fInital <= "Z") {
+    } else if (initial >= "K" && initial <= "P") {
+        return "Alex";
+    } else if (initial >= "Q" && initial <= "Z") {
         return "Jackson";
     }
 }
@@ -43,7 +44,7 @@ function getMiddleName(fColor) {
         middleName = "Nova";
     } else if (fColor === "blue") {
         middleName = "Comet";
-    } else if (fColor === "Indigo") {
+    } else if (fColor === "indigo") {
         middleName = "Orbit";
     } else if (fColor === "violet") {
         middleName = "Galaxy";
@@ -58,47 +59,54 @@ function getMiddleName(fColor) {
 
 
 function getLastName(cPlanet) {
-    if (cPlanet === "Mercury") {
+    if (cPlanet === "mercury") {
         return "Redstone";
-    } else if (cPlanet === "Venus") {
+    } else if (cPlanet === "venus") {
         return "Silversky";
-    } else if (cPlanet === "Earth") {
+    } else if (cPlanet === "earth") {
         return "Stormcloud";
-    } else if (cPlanet === "Mars") {
+    } else if (cPlanet === "mars") {
         return "Ringshadow";
-    } else if (cPlanet === "Jupiter") {
+    } else if (cPlanet === "jupiter") {
         return "Deepwave";
-    } else if (cPlanet === "Saturn") {
+    } else if (cPlanet === "saturn") {
         return "Iceflare";
-    } else if (cPlanet === "Uranus") {
+    } else if (cPlanet === "uranus") {
         return "Swiftwind";
-    } else if (cPlanet === "Neptune") {
+    } else if (cPlanet === "neptune") {
         return "Brightstar";
     }
 }
 
 function getSuffix(cAge) {
-    if (cAge < 10) {
-        return "Junior";
-    } else if (cAge === 16 || cAge === 17) {
+    if (cAge === 16 || cAge === 17) {
         return "Senior";
     } else if (cAge === 18 || cAge === 19) {
         return "Adult";
     } else if (cAge === 20) {
         return "III";
     }
+    return "";
 }
 
-
+// I did use chat GPT to help me with the code that is below this line because nothing i was doing was working correctly.//
 document.getElementById("generate").addEventListener("click", function() {
-    const cDay = document.querySelector("radio:checked")?.value;
+    const cDay = document.querySelector("input[name='Cday']:checked")?.value;
     const fInitial = document.getElementById("Finitial").value;
     const fColor = document.querySelector(".color-btn.selected")?.getAttribute("data-color");
     const cPlanet = document.getElementById("Fplanet").value;
-    const cAge = document.getElementById("Cage").value;
+    const cAge = parseInt(document.getElementById("Cage").value);
 
     const name = `${getPrefix(cDay)} ${getFirstName(fInitial)} ${getMiddleName(fColor)} ${getLastName(cPlanet)} ${getSuffix(cAge)}`;
     if (name) {
         document.getElementById("result").innerHTML = name;
     }
+});
+
+
+document.querySelectorAll(".color-btn").forEach(button => {
+    button.addEventListener("click", function() {
+        document.querySelectorAll(".color-btn").forEach(btn => btn.classList.remove("selected"));
+        this.classList.add("selected");
+    });
 });
